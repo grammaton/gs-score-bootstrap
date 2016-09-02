@@ -1,0 +1,145 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[
+	10pt,
+	a3paper,
+	landscape,
+	%draft
+	]{book}
+
+\usepackage[]{geometry}
+
+\usepackage{tikz}
+\usetikzlibrary{arrows,snakes,backgrounds}
+
+%\usepackage{pst-barcode}
+
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+
+%cartoncini colorati 34,3 44,5
+%\DeclareOption{weird}{\CROP@size{34.3truecm}{44.5truecm}}
+\usepackage[cam,width=49.5truecm,height=34.3truecm,center]{crop}
+
+\usepackage{paralist}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{multicol}
+\usepackage{pdfpages}
+
+\usepackage{url}
+
+%-------------------------------------------------------------
+%----------------------------------------------------- FONTS -%-------------------------------------------------------------
+
+\linespread{1.04}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{IM FELL Great Primer}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{IM FELL Great Primer}
+\setmonofont[]{IM FELL Great Primer}
+
+\newfontfamily{\scaps}{IM FELL Great Primer SC}
+\newfontfamily{\grafs}{IM FELL FLOWERS 1}
+\usepackage[italian, english]{babel}
+
+\usepackage{lilyglyphs}
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+
+
+%-------------------------------------------------------------
+%-------------------------------------------------- DOCUMENT -%-------------------------------------------------------------
+
+\begin{document}
+
+\AddToShipoutPictureBG*{%
+	\put(-60,-20){
+	\includegraphics[keepaspectratio]{bg_copertina_triwave}}
+	}
+	
+\thispagestyle{empty}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node [xshift=2cm,yshift=22cm] at (current page.south west)
+        [text width=15cm,fill=white,inner sep=1.cm,rounded corners,above right]
+  {
+    \fontsize{19}{10}\selectfont{
+	Other Works:
+	}
+	{\large
+	\begin{itemize}
+	\item \emph{PAIR} sonata for Cello solo
+	\item \emph{al nulla di cui essere felici} for Flute, Baritone Sax \& S.T.ONE
+	\item \emph{Viola D'Umore} for Viola
+	\item \emph{riPercussioni} for Perussions \& Electronics
+	\item \emph{Studio C.T.H.I.A.S.} for Piano \& Electronics
+	\end{itemize}
+	}
+  };
+  
+\end{tikzpicture}
+
+\pgfdeclareimage[interpolate=true,width=1in,height=1in]
+  {image1}{images/qrafter-20150807-092531}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node [xshift=2cm,yshift=3cm] at (current page.south west)
+        [text width=15cm,fill=white,inner sep=1.cm,rounded corners,above right]
+  {
+    \begin{pgfpicture}
+  	\pgftext[at=\pgfpoint{0cm}{0cm},left,base]{\pgfuseimage{image1}}
+    \end{pgfpicture}
+  };
+  
+\end{tikzpicture}
+
+\begin{tikzpicture}[remember picture,overlay]
+  \node [xshift=5cm,yshift=3.5cm] at (current page.south west)
+        [text width=12cm,inner sep=1.cm,rounded corners,above right]
+  {
+\emph{A. Sax.} by Giuseppe Silvi is licensed under a Creative Commons \\
+Attribution-NonCommercial-ShareAlike 4.0 International License.\\ 
+Permissions beyond the scope of this license may be available at\\
+giuseppesilvi.com/asax.
+  };
+  
+\end{tikzpicture}
+
+
+
+\begin{tikzpicture}[remember picture,overlay]
+	\draw [line width=1mm,fill=white] (18,4) rectangle (36,-22);
+	\node [xshift=-18cm,yshift=2cm] at (current page.south east)
+    	  [text width=14cm,fill=white,inner sep=1.cm,rounded corners,above right]{
+    \begin{center}
+       	\fontsize{19}{10}\selectfont{Giuseppe SILVI} \\
+			\vspace{2cm}
+    	\fontsize{81}{10}\selectfont{A. SAX.}\\
+			\vspace{.5cm}
+		\fontsize{19}{10}\selectfont{\emph{for any kind of Saxophone \& Electronics}} \\
+			\vspace{.5cm}
+		\fontsize{13}{10}\selectfont{2013--2015} \\
+			\vspace{16cm}
+		\fontsize{13}{10}\selectfont{GS006-E002} \\
+	\end{center}
+	};
+
+\end{tikzpicture}
+
+
+%\begin{tikzpicture}[remember picture,overlay]
+%  \node [scale=1,text opacity=1.]
+%    at (current page.center) {
+%    \fontsize{81}{10}\selectfont{
+%	A. SAXXXX.
+%	}};
+%\end{tikzpicture}
+
+\end{document}  
+

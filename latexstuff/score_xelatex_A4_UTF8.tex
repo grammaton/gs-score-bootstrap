@@ -1,0 +1,386 @@
+%!TEX TS-program = xelatex
+%!TEX encoding = UTF-8 Unicode
+
+\documentclass[10pt, a4paper, twoside]{book}
+\usepackage[margin=1in]{geometry}
+
+\usepackage[parfill]{parskip}    % Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{wrapfig}
+
+\usepackage{paralist}
+\usepackage{array}
+\usepackage{longtable}
+\usepackage{multirow}
+
+\usepackage{url}
+
+\usepackage{multicol}
+\usepackage{pdfpages}
+
+%-------------------------------------------------------------
+%----------------------------------------------------- FONTS -%-------------------------------------------------------------
+
+\linespread{1.04}
+
+\usepackage{fontspec,xltxtra,xunicode}
+\defaultfontfeatures{Mapping=tex-text}
+\setromanfont[Mapping=tex-text]{IM FELL Great Primer}
+\setsansfont[Scale=MatchLowercase,Mapping=tex-text]{Gill Sans}
+\setmonofont[]{Fira Mono}
+
+\newfontfamily{\scaps}{IM FELL Great Primer SC}
+\newfontfamily{\grafs}{IM FELL FLOWERS 1}
+\usepackage[italian, english]{babel}
+
+\usepackage{lilyglyphs}
+
+\usepackage[hang, small,labelfont=bf,up,textfont=it,up]{caption}
+
+%-------------------------------------------------------------
+%---------------------------------------------------- HEADER -%-------------------------------------------------------------
+
+\usepackage{fancyhdr}
+
+\fancypagestyle{plain}{%
+\fancyhf{} % clear all header and footer fields
+%\fancyhead[CO,CE]{---Draft---}
+\fancyfoot[RO,LE]{\fontsize{18pt}{18pt}\selectfont\thepage} % except the center
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}}
+\pagestyle{plain}
+
+%-------------------------------------------------------------
+%----------------------------------------------------- TITLE -%-------------------------------------------------------------
+
+\input{customs} % file con le impostazioni personali
+
+\title{{
+	\fontsize{19}{10}\selectfont{
+	\theName
+	} \\
+	\bigskip {
+	\fontsize{81}{10}\selectfont{
+	\vspace{6cm}\theTitle
+	}}}}
+
+\author{
+	\fontsize{19}{10}\selectfont{
+	\textit{
+		\scoredFor
+	}}}
+
+\date{
+	\emph{{
+	\LARGE \date
+	}}\vfill
+	%GS006-E002
+	}
+	
+	
+
+\makeatletter
+%\frameattext{<backgroundcolor>}{linecolor}{<linewidth>}
+\newdimen\extraxsep
+\newdimen\extraysep
+\extraxsep=20mm
+\extraysep=20mm
+\newcommand\frameattext[3]{%
+  \linethickness{#3}%
+  \AddToShipoutPicture*{%
+    \AtTextLowerLeft{%text-boder
+       \put(\LenToUnit{-,5\extraxsep},\LenToUnit{-0.5\extraysep}){\color{#1}%
+             \rule{\dimexpr\textwidth+\extraxsep\relax}{\dimexpr\textheight+\extraysep\relax}}%
+       \put(\LenToUnit{-,5\extraxsep},\LenToUnit{-0.5\extraysep}){\color{#2}%
+       \framebox(\LenToUnit{\dimexpr\textwidth+\extraxsep\relax},%
+                 \LenToUnit{\dimexpr\textheight+\extraysep\relax}){}
+       }
+    }%
+  }%
+}
+%\frameatpage{<backgroundcolor>}{linecolor}{<linewidth>}
+\newcommand\frameatpage[3]{%
+  \linethickness{#3}%
+  \AddToShipoutPicture*{%
+    \AtPageLowerLeft{%page-border
+      \put(0,0){\color{#1}\rule{\paperwidth}{\paperheight}}%
+      \put(\LenToUnit{\@wholewidth},\LenToUnit{\@wholewidth}){%
+       \color{#2}\framebox(\LenToUnit{\dimexpr\paperwidth-2\@wholewidth\relax},%
+                  \LenToUnit{\dimexpr\paperheight-2\@wholewidth\relax}){}%
+      }%
+    }%
+  }%
+}
+
+\makeatother
+
+%-------------------------------------------------------------
+%-------------------------------------------------- DOCUMENT -%-------------------------------------------------------------
+
+\begin{document}
+
+%\AddToShipoutPictureBG*{%
+%	\put(-5,-5){
+%	\includegraphics[keepaspectratio]{onde}}
+%  }
+
+\setlength{\columnsep}{.4in}
+
+
+
+\frameattext{white}{black}{2pt}
+
+\begin{center}
+	~\\
+	\vfill
+    \fontsize{19}{10}\selectfont{Giuseppe SILVI} \\
+		\vspace{2cm}
+    \fontsize{81}{10}\selectfont{A. SAX.} \\
+		\vspace{.5cm}
+	\fontsize{19}{10}\selectfont{\emph{for any kind of Saxophone \& Electronics}} \\
+		\vspace{.5cm}
+	\fontsize{13}{10}\selectfont{2013--2015} \\
+		\vspace{16cm}
+	\fontsize{13}{10}\selectfont{GS006-E002} \\
+\end{center}
+%\maketitle
+
+\thispagestyle{empty}
+
+
+
+\clearpage
+
+\thispagestyle{empty}
+
+~\vfill
+
+\includegraphics[width=.25\columnwidth]{images/by-nc-sa}\\
+\emph{A. Sax.} by Giuseppe Silvi is licensed under a Creative Commons \\
+Attribution-NonCommercial-ShareAlike 4.0 International License.\\ 
+Permissions beyond the scope of this license may be available at\\
+giuseppesilvi.com/asax.%\marginpar{prova}
+
+
+\clearpage
+
+% ---------------------------------------------
+% ------------------------------- ITALIANO ----
+% ---------------------------------------------
+
+\section*{Istruzioni per l'esecuzione}
+
+\begin{multicols}{2}
+
+Il brano è composto di otto moduli nominati dalla lettera \emph{A} alla lettera \emph{H}. L'esecutore ne sceglie quattro e li dispone nell'ordine che preferisce tra l'\emph{introduzione} ed il \emph{finale} dati. È lasciata alla discrezione dell'esecutore la scelta del tipo di Sax o dei diversi Sax da utilizzare durante il brano o parte di esso.
+
+Ognuna delle otto pagine musicali è dedicata ad un brano (e di conseguenza ad un autore) diverso del repertorio per sassofono solo. L'\emph{introduzione} ed il \emph{finale} fanno da contenitori entro cui questi moduli vengono montati. Ognuno degli otto moduli esprime tratti stilistici propri che si sviluppano nel contesto sonoro elettroacustico nascondendo e svelando le proprie origini. Le scelte possibili, di quattro pannelli su otto, senza ripetizioni, sono 1680. 
+
+Ognuno degli otto moduli dura novanta secondi, divisi in sei sistemi di circa quindici secondi ciascuno. L'\emph{introduzione} ed il \emph{finale} hanno entrambi durata di un minuto. La durata totale è di otto minuti.
+
+La partitura è trascritta indicando le posizioni condivise dall'intera famiglia dei saxofoni così che la scelta del Sax ne condizioni i suoni d'effetto. \\
+Le alterazioni si riferiscono solo alla nota che precedono, il~ {\large \natural~} ha la sola funzione di facilitare la lettura.
+
+Suonare sempre senza vibrare.
+
+L'elettronica consiste in una parte fissa\footnote{L'elettronica, sia nella traccia fissa che negli algoritmi per il \emph{live electronics} sono disponibili all'indirizzo web: \newline \url{http://giuseppesilvi.com/asax}}, della durata di otto minuti, ovvero l'intera durata del brano, ed una parte live in relazione ai moduli scelti dal saxofonista. Il brano inizia e termina con il solo suono del Sax, ciò è garantito da silenzi in testa ed in coda all'elettronica fissa.
+
+L'elettronica è concepita attorno alle teorie di \emph{Forma Sonora} e \emph{Spazio Elettroacustico Omnidirezionale} che caratterizzano la ricerca elettroacustica e la produzione musicale dell'autore\footnote{Per \emph{Forma Sonora} si intende la forma percepita di un determinato oggetto sonoro quale può essere uno strumento acustico. Lo \emph{Spazio Elettroacustico Omnidirezionale} è realizzato mediante l'utilizzo di un sistema di diffusione tetraedrico, ovvero un altoparlante avente quattro facce triangolari ed in grado di diffondere suono in tutte le direzioni dello spazio. Maggiori informazioni sono disponibili all'indirizzo web: \newline \url{http://giuseppesilvi.com}}. Le due componenti elettroniche, quella fissa e quella dal vivo, utilizzano dati di analisi della forma sonora del Sax per creare un ambiente sonoro elettroacustico coerente. 
+
+L'esecuzione elettronica del brano può essere affidata ad un esecutore elettroacustico o realizzata dallo stesso saxofonista mediante controlli a pedale.
+
+\end{multicols}
+
+\vfill
+
+\begin{center}{
+	\fontsize{35pt}{50pt}\selectfont{
+	\bigskip {
+	\grafs FYYH
+	}}}
+\end{center}
+
+\vfill
+
+\section*{Note di programma}
+
+\begin{multicols}{2}
+
+
+
+\emph{A. Sax.} è stato concepito per essere suonato da ogni tipo di Saxofono. Composto in occasione del \emph{Monaco Electroacoustique 2013}, festival internazionale di musica elettroacustica del Principato di Monaco, il brano è un omaggio sia al Saxofono che ad Adolphe Sax, suo genio creatore.
+
+La prima esecuzione del brano è stata di Edoardo Capparucci, presso l'Auditorium dell'{\scaps Académie Rainier III} del Principato di Monaco, il 2 maggio 2013. Di Edoardo Capparucci  sono anche i suoni di sax elaborati nella perte elettronica fissa. 
+
+Per \emph{Suona Italiano} il primo dicembre 2014 {\scaps A. Sax.} è stato eseguito da Enzo Filippetti presso la {\scaps Recital Hall} del {\scaps Conservatorio di Birmingham} e presso il {\scaps Performance Space} della {\scaps City University} di Londra il 9 dicembre. 
+
+L'interpretazione di Enzo Filippetti e gli stimoli, da egli forniti nell'analisi delle prime stesure della partitura, hanno portato alla versione attuale qui pubblicata. Ad Enzo, incarnazione della passione per lo strumento, la ricerca e la didattica, va la mia più sincera gratitudine. 
+
+%\flushright{------------------}
+\vfill
+~
+\vfill
+
+\end{multicols}
+
+\clearpage
+
+\section*{Regia informatica}
+
+\begin{multicols}{2}
+
+Lo scopo ultimo della regia informatica per il brano \emph{A. Sax.} è quello di descrivere l'ambiente sonoro come fosse un'evoluzione dello strumento acustico. L'elettronica evidenzia le caratteristiche timbrico-spaziali dello strumento senza mai prendere il sopravvento su quest'ultimo. Non uno sfondo ma, sfruttandone la \emph{forma sonora}, piuttosto, un alter-ego, uno sguardo altro che ne fissa le caratteristiche nel tempo e nello spazio.
+
+Per ottenere ciò è necessario osservare che lo strumento dal vivo va amplificato solo se l'ambiente di esecuzione lo renda necessario e mai in misura per cui l'amplificazione superi il suono acustico dello strumento. 
+
+%L'intera struttura elettronica è descritta in \emph{A-Format}\footnote{Secondo le teorie \emph{Ambisonic} di Michael Gerzon, lo spazio sonoro \emph{A-Format} è descritto da quattro componenti spaziali \emph{LF, RF, LB, RB}. Dal sistema \emph{A-Format} è possibile ricavare il \emph{B-Format} da cui è possibile generare diversi scenari possibili per la diffusione elettroacustica.} così da essere riproducibile senza decodifiche mediante il sistema di diffusione omni-direzionale \emph{S.T.ONE}\footnote{\url{http://giuseppesilvi.com/asax}}. 
+
+Il brano può essere eseguito utilizzando molteplici tagli di sax, quindi la microfonazione può essere realizzata con due o più microfoni posizionati in modo da coprire l'intera gamma timbrica degli strumenti. I microfoni vengono quindi mixati in modo da ottenere un segnale monofonico da inviare ai processi di segnale.
+
+Ogni processore ha controlli esecutivi del segnale in ingresso ma non in uscita, dove si hanno solo controlli operativi. In questo modo una volta tarate le uscite dei singoli processi si interviene solo sul segnale in entrata. Se tutti i controlli in entrata ai processi sono chiusi si ha la sola amplificazione dello strumento, che in ogni caso dovrà essere solo di rinforzo, se necessaria, in relazione all'ambiente esecutivo.
+
+Il livello di uscita dei processi, considerato un suono al massimo del livello di entrata, non dovrà mai superare il livello percepito del suono acustico in sala. 
+
+\end{multicols}
+
+\subsection*{Algoritmi}
+
+\begin{multicols}{2}
+
+[d i s e g n a r e  a l g o r i t m i]
+\end{multicols}
+
+\clearpage
+
+%\subsection*{algoritmo tikz}
+%
+%%\subsection*{Diffusione nello spazio}
+%
+%%\begin{center}
+%%{\fontsize{20pt}{100pt}\selectfont{\bigskip  {\grafs o o o }}}
+%%\end{center}
+%
+%
+%
+%\includegraphics[width=0.9\textwidth]{images/diagrammi.pdf}
+%
+%\cleardoublepage
+
+%% ---------------------------------------------
+%% ------------------------------- INGLESE -----
+%% ---------------------------------------------
+%
+%\section*{Performance Instruction}
+%
+%\begin{multicols}{2}
+%\end{multicols}
+%
+%\section*{Programme Note}
+%
+%\begin{multicols}{2}
+%
+%Il brano conta otto moduli nominati da A a H. L'esecutore ne sceglie quattro e li dispone nell'ordine che preferisce tra l'introduzione dil finale dati. È inoltre lasciato alla discrezione dell'esecutore la scelta del Sax o dei diversi Sax da utilizzare durante il brano o parte di esso. 
+%
+%La partitura non \'e scritta in suoni reali.
+%
+%Ognuna delle otto pagine é 
+%
+%\end{multicols}
+%
+%%\section*{Translation of the instructions from the score}
+%
+%%\end{multicols}
+
+\clearpage
+
+\input{legenda.tex}
+
+\clearpage
+
+~
+
+\includepdf[pages=-]{../lilypondstuff/score.pdf}
+
+\clearpage
+
+	\fontsize{81}{10}\selectfont{
+	\vspace{6cm}454x
+	}
+	
+	\fontsize{19}{10}\selectfont{
+	\textit{
+		A. quartet of SAX. \& Electronics
+	}}
+
+\fontsize{10}{12}\selectfont{}
+
+\section*{Quartetto}
+
+\begin{multicols}{2}
+Fin dal principio ho pensato \emph{A.SAX.} come un brano che potesse vivere di un suo tempo specifico. L'idea di analizzare brani del repertorio per sax solo, per poi generare moduli con uno stile specifico, potrebbe portare ad un numero di moduli superiore agli otto attuali e, di conseguenza, aumentarne le combinazioni possibili. 
+
+Ma questo tempo specifico può essere vissuto orizzontalmente o, come spesso accade in musica, verticalmente. L'idea del quartetto nasce da una discussione in merito a questa peculiarità di \emph{A.SAX.} con Pasquale Citera, con un riferimento particolare alla funzione spaziale che un'esecuzione con quattro sax potrebbe avere:
+
+\setlength{\tabcolsep}{12pt}
+\renewcommand{\arraystretch}{3}
+
+\begin{center}
+\begin{tabular}{c c c}
+
+sax 1 & & sax 2 \\
+& S.T.ONE & \\
+sax 4 & & sax 3 \\
+
+\end{tabular}
+\end{center}
+\bigskip
+
+i quattro sassofonisti si dispongono intorno al diffusore omnidirezionale formando una \emph{X} con il diffusore al centro, rivolti verso l'esterno e dando le spalle al diffusore. Il publico, libero di muoversi, circonda l'ensemble di sassofoni. 
+
+Rimangono valide alcune caratteristiche del brano. Il quartetto sceglie gli strumenti per eseguire i moduli o parte di essi. Ogni componente suona, a turno, il modulo \emph{D. SCHEMA PRIMO}, mentre i restanti tre moduli a testa vengono scelti dal quartetto, all'interno dell'\emph{Introduzione} e del \emph{Finale} dati, in cui l'ensemble suona insieme. 
+
+\bigskip
+\setlength{\tabcolsep}{7pt}
+\renewcommand{\arraystretch}{1.2}
+
+\begin{center}
+\begin{tabular}{r c c c c c c}
+
+& \multicolumn{6}{c}{Moduli} \\
+\hline
+\hline 
+sax 1 & Intro & D & & & & Finale \\
+\hline
+\hline
+sax 2 & Intro & & D & & & Finale \\
+\hline
+\hline
+sax 3 & Intro & & & D & & Finale \\
+\hline
+\hline
+sax 4 & Intro & & & & D & Finale \\
+\hline
+\hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+
+Ogni componente del quartetto non può suonare moduli ripetuti, mentre la ripetizione del modulo interna al quartetto è inevitabile. È possibile scegliere lo stesso modulo per più esecutori contemporaneamente tranne, ovviamente, per il modulo \emph{G} che scorre un esecutore alla volta. La struttura del modulo \emph{G} fa si che al termine ci si trovi a ripercorrere al ritroso l'intero modulo. Seguendo questo filo si collegano i quattro strumentisti nella coincidenza, rispettivamente, di fine e inizio modulo.
+
+
+
+
+\end{multicols}
+
+%\begin{figure}[h!]
+%\begin{center}
+%\includegraphics[width=0.45\textwidth]{images/IMG_1335.png}
+%\caption{Posizioni}
+%\label{default}
+%\end{center}
+%\end{figure}
+
+\end{document}  
