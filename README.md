@@ -1,2 +1,9 @@
-# lilypond-bootstrap
-a set of preconfigured files to include in a LilyPond code
+# Score Bootstrap
+
+- Latex
+  - Copertina
+  - Testi
+  - Legenda
+- Lilypond
+  - Partitura
+  - Parti
